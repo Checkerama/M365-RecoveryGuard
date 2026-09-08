@@ -65,3 +65,5 @@ desktop.ini
 *.tmp
 *.bak
 ~*
+
+test-results.xml
