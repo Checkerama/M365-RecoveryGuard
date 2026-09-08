@@ -1,0 +1,24 @@
+m365-recoveryguard/
+├── README.md
+├── .gitignore
+├── SECURITY.md
+├── NOTICE.md
+├── src/
+│   ├── M365-Recovery-SelfHealing.ps1
+│   ├── Start-RecoveryGuard.ps1
+│   └── Watch-RecoveryGuard.ps1
+├── config/
+│   └── recovery.template.json
+├── examples/
+│   └── queue.synthetic.csv
+├── tools/
+│   ├── Export-RecoveryEvidence.ps1
+│   └── Test-RepositorySanitization.ps1
+├── tests/
+│   └── README.md
+└── docs/
+    ├── architecture.md
+    ├── case-study.md
+    ├── safety-model.md
+    ├── sanitization.md
+    └── github-first-upload.md

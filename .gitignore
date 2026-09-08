@@ -1,0 +1,67 @@
+# Local/production configuration
+config/recovery.local.json
+config/*.local.json
+.env
+.env.*
+*.local.*
+
+# Runtime state / evidence / logs
+state/
+State-*/
+closure/
+Closure/
+logs/
+evidence/
+Evidence/
+output/
+artifacts/
+*.log
+*.jsonl
+*terminal-results*.csv
+*health*.csv
+*reconciliation*.csv
+*checkpoint*.json
+*heartbeat*.json
+*inflight*.json
+*write-arm*.json
+*probe-result*.json
+*selftest-result*.json
+
+# Incident/manifests/queues - only synthetic examples belong in Git
+queue.csv
+queues/
+*manifest*.csv
+*audit*.csv
+*recycle*.csv
+*conflict*.csv
+*restore*.csv
+!examples/*.csv
+
+# Secrets / auth material
+*.pfx
+*.p12
+*.pem
+*.key
+*.cer
+*.crt
+*.secrets.*
+secrets/
+credentials/
+
+# Reports produced for real incidents
+*.pdf
+*.docx
+*.xlsx
+*.zip
+
+# PowerShell/editor/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary
+*.tmp
+*.bak
+~*

@@ -1,0 +1,60 @@
+{
+  "ProgramVersion": "1.0.0",
+  "SharePoint": {
+    "SiteUrl": "https://tenant.sharepoint.com/sites/TargetSite",
+    "RecycleAbsentErrorPattern": "Value does not fall within the expected range."
+  },
+  "Authentication": {
+    "Mode": "InteractivePersisted",
+    "ClientId": "<ENTRA_APP_CLIENT_ID>",
+    "Tenant": "<tenant.onmicrosoft.com-if-using-certificate>",
+    "CertificateThumbprint": "<WINDOWS_CERT_THUMBPRINT-if-using-certificate>"
+  },
+  "Target": {
+    "UserOrServiceAccount": "affected-user@example.com",
+    "WindowStartUtc": "YYYY-MM-DDTHH:MM:SSZ",
+    "WindowEndUtcExclusive": "YYYY-MM-DDTHH:MM:SSZ"
+  },
+  "Paths": {
+    "QueueCsv": "C:\\RecoveryGuard\\queue.csv",
+    "StateDirectory": "C:\\RecoveryGuard\\state"
+  },
+  "Recovery": {
+    "OriginalSequenceBase": 1,
+    "MaxThrottleAttempts": 5,
+    "ThrottleBaseDelaySeconds": 2
+  },
+  "Supervisor": {
+    "PollSeconds": 5,
+    "MinimumHangTimeoutSeconds": 180,
+    "MaximumHangTimeoutSeconds": 600,
+    "P95Multiplier": 12,
+    "UnhealthyBackoffSeconds": 30,
+    "MaxReconcileAttempts": 3
+  },
+  "Health": {
+    "ProbeIntervalSeconds": 60,
+    "ProbeTimeoutSeconds": 30,
+    "RequiredConsecutiveHealthyProbes": 2,
+    "Database": {
+      "Enabled": false,
+      "ConnectionStringEnvVar": "M365_RECOVERY_DB_CONNECTION"
+    },
+    "ReconcileTimeoutSeconds": 45
+  },
+  "Reporting": {
+    "IncidentPopulation": 3,
+    "RestoredBaseline": 0,
+    "ConflictsBaseline": 0
+  },
+  "Safety": {
+    "WriteEnabled": false,
+    "ArmFile": "C:\\RecoveryGuard\\state\\write-arm.json",
+    "ExpectedEngineSha256": "",
+    "QueueSha256": "",
+    "ExpectedQueueCount": 3,
+    "ExpectedFirstSequence": 1,
+    "ExpectedLastSequence": 3,
+    "ExpectedFirstGuid": ""
+  }
+}
